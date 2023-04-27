@@ -14,7 +14,8 @@ About strapi I found is not that easy as I heard (maybe for some devs it is). it
 
 ## Usage
 
-- Unzip the folder and run the file index.html using Live Server or similar. VScode has Live Server extension by default.
+- Unzip the folder and run the file index.html using Live Server or similar. VScode has Live Server extension by default. Note that because of Render deactive
+ the service when there is no traffic in a range of time it would be necessary to wait a little bit and releoad page.
 
 ## Technologies
 - HTML
