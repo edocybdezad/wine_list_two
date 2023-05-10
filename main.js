@@ -1,18 +1,14 @@
-// import {wines } from "./wines.js"
 
 const properties = ['name','precio','cepas','dop']
 
 document.addEventListener('DOMContentLoaded', function() {
+    
     logJSONData().
     then( wines => {
 
-        // console.log("then wines",wines);
         const Whites = wines.filter( wine => wine.attributes.tipo == 'blanco')
-        // console.log("whites", Whites);
-        const Reds = wines.filter( wine => wine.attributes.tipo == 'tinto')
-        
+        const Reds = wines.filter( wine => wine.attributes.tipo == 'tinto')    
         const Cava = wines.filter( wine => wine.attributes.tipo === 'Espumoso') 
-        
         const Crianza = wines.filter( wine => wine.attributes.edad === 'Crianza')
         const Ribera = wines.filter( wine => wine.attributes.dop === 'D.O. Ribera del Duero')
         const Valencia = wines.filter( wine => wine.attributes.dop === 'D.O. Valencia')
@@ -27,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         mainf([Whites, Reds, Cava]); 
 
-    })
+   
+});
 });
 async function logJSONData() {
     const response = await fetch('https://restaurantapi-vjlx.onrender.com/api/vinos');
@@ -35,7 +32,9 @@ async function logJSONData() {
     // console.log("function",jsonData.data);
     return jsonData.data;
 }
-  
+
+
+ 
 function card(data) {
     // console.log(data.attributes)
 
